@@ -1,0 +1,20 @@
+.radio-selection-container{
+    label {
+        margin-right: 0.5rem
+    }
+}
+
+.button-container{
+    .btn{
+        margin-right: 0.5rem
+    }
+}
+
+.list-group-item + .list-group-item{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.code{
+    font-weight: bold;
+    font-size: 1.5em;
+}

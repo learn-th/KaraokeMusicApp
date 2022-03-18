@@ -1,0 +1,73 @@
+
+<div class="mb-3 radio-selection-container">
+  <p class="form-label">Buscar por: </p>
+  <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" value= "true" [(ngModel)] = "isArtist">
+  <label class="btn btn-outline-primary" for="option1">Nome do artista</label>
+
+  <input type="radio" class="btn-check" name="options" id="option2" value= "false" autocomplete="off" [(ngModel)] = "isArtist">
+  <label class="btn btn-outline-primary" for="option2">Nome da música</label>
+</div>
+
+<div class="mb-3">
+  <input type="text" class="form-control" name="search-item-text" id="txt-search" [(ngModel)] = "searchText" placeholder="Informe o texto que está procurando">
+</div>
+<div class="mb-3 button-container">
+  <button class="btn btn-primary" type="button" (click)="search()">Procurar</button>
+  <button  class="btn btn-outline-secondary" (click)="clearSearch()">Limpar</button>
+</div>
+
+
+<div class="search-result"
+infinite-scroll 
+(scrolled)="onScrollDown($event)">
+
+  <!-- <div class="list-group">
+    <a class="list-group-item list-group-item-action" *ngFor="let item of dataToDisplay">
+      <p>Codigo: {{item.Code}}</p>
+      <p>Artista: {{item.Artist}}</p>
+      <p>Música: {{item.Name}}</p>
+      <p>Letra: {{item.Lyric}}</p>
+    </a>
+  </div> -->
+
+  <!-- <div class="card mb-3" *ngFor="let item of dataToDisplay">
+    <div class="card-header">
+      Artista: {{item.Artist}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>Música: {{item.Name}}</p>
+        <p>Código: {{item.Code}}</p>
+        <footer class="blockquote-footer"> <cite title="Source Title">{{item.Lyric}}</cite></footer>
+      </blockquote>
+    </div>
+  </div> -->
+
+  <div class="list-group">
+    <div class="list-group-item mb-3" *ngFor="let item of dataToDisplay">
+      <div class="row align-items-center">
+        <div class="col-9">
+          <div>
+            <h5 class="mb-1">{{item.Artist}}</h5>
+          </div>
+          <p class="mb-1">{{item.Name}}</p>
+          <small><cite title="Source Title">{{item.Lyric}}</cite></small>
+        </div>
+        <div class="col-3" >
+          <small class="code">{{item.Code}}</small>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+<!-- <div *ngFor="let item of dataToDisplay" style="margin-bottom: 10px; border:2px #000">
+  <div>Codigo: {{item.Code}}</div>
+  <div>Artista: {{item.Artist}}</div>
+  <div>Música: {{item.Name}}</div>
+  <div>Letra: {{item.Lyric}}</div>
+</div> -->
+<!-- <pre>
+{{dataToDisplay | json}}
+</pre> -->
