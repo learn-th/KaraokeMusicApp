@@ -10,7 +10,7 @@ import { MusicModel } from './music-model';
 export class AppComponent implements OnInit {
   title = 'KaraokeMusicList';
   data:MusicModel[] = [];
-  private jsonPath = './../assets/app_data.json';
+  private jsonPath = 'https://learn-th.github.io/KaraokeMusicApp/assets/app_data.json';
   dataToDisplay:MusicModel[] = [];
   public searchText:string='';
   private filteredData:MusicModel[] = [];
