@@ -1,4 +1,4 @@
-//Install express server
+//Install express server and test
 const express = require('express');
 const path = require('path');
 
